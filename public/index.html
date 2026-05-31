@@ -51,6 +51,14 @@
             border-radius: 8px;
             margin-bottom: 15px;
         }
+        .img-desc {
+            font-size: 0.9rem;
+            color: #555;
+            margin: 5px 0;
+            line-height: 1.4;
+            text-align: center;
+            padding: 0 10px;
+        }
         .rating {
             display: flex;
             justify-content: center;
@@ -145,13 +153,53 @@
     <script>
         // ---------- 配置：你的图片列表 ----------
         const images = [
-            { id: 'pic1', src: 'images/pic34.png', title: 'Pic 1' },
-            { id: 'pic2', src: 'images/pic35.png', title: 'Pic 2' },
-            { id: 'pic3', src: 'images/pic36.png', title: 'Pic 3' },
-            { id: 'pic4', src: 'images/pic37.png', title: 'Pic 4' },
-            { id: 'pic5', src: 'images/pic38.png', title: 'Pic 5' },
-            { id: 'pic6', src: 'images/pic39.png', title: 'Pic 6' },
-            // 添加更多图片...
+            {
+                id: 'pic1',
+                src: 'images/pic34.png',
+                title: 'Pic 1',
+                desc1: 'Hayase Yuuka',
+                desc2: 'Exciting'
+            },
+
+            {
+                id: 'pic2',
+                src: 'images/pic35.png',
+                title: 'Pic 2',
+                desc1: 'Hayase Yuuka',
+                desc2: 'Shocked'
+            },
+
+            {
+                id: 'pic3',
+                src: 'images/pic36.png',
+                title: 'Pic 3',
+                desc1: 'Hayase Yuuka',
+                desc2: 'Disappointed'
+            },
+
+            {
+                id: 'pic4',
+                src: 'images/pic37.png',
+                title: 'Pic 4',
+                desc1: 'Hayase Yuuka',
+                desc2: 'Delighted'
+            },
+
+            {
+                id: 'pic5',
+                src: 'images/pic38.png',
+                title: 'Pic 5',
+                desc1: 'Hayase Yuuka',
+                desc2: 'Shy'
+            },
+
+            {
+                id: 'pic6',
+                src: 'images/pic39.png',
+                title: 'Pic 6',
+                desc1: 'Hayase Yuuka',
+                desc2: 'Confused'
+            },
         ];
 
         // 存储每张图片当前选中的分数 (1-5)
@@ -178,6 +226,21 @@
             imageEl.src = img.src;
             imageEl.alt = img.title;
             card.appendChild(imageEl);
+
+            // 两行描述文字
+            if (img.desc1) {
+                const desc1El = document.createElement('p');
+                desc1El.className = 'img-desc';   // 使用一个 CSS 类方便统一样式
+                desc1El.textContent = img.desc1;
+                card.appendChild(desc1El);
+            }
+
+            if (img.desc2) {
+                const desc2El = document.createElement('p');
+                desc2El.className = 'img-desc';
+                desc2El.textContent = img.desc2;
+                card.appendChild(desc2El);
+            }
 
             // 评分按钮组
             const ratingDiv = document.createElement('div');
@@ -256,7 +319,7 @@
             // 5. 逐个提交已打分的图片评分
             for (const item of scoredImages) {
                 try {
-                    const response = await fetch('-----------', {
+                    const response = await fetch('https://ratingrequest.onrender.com/submit-score', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(item)
