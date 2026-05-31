@@ -1,16 +1,15 @@
+// api/server.js
+const express = require('express');
 const cors = require('cors');
+const { MongoClient } = require('mongodb');
+const app = express();
+const PORT = process.env.PORT || 3000;
 
 // 允许所有来源（开发/测试用，正式环境可以指定 Netlify 域名）
 // app.use(cors());
 
 // 如果你希望更安全，可以只允许你自己的 Netlify 域名：
 app.use(cors({ origin: 'https://comfy-valkyrie-40dc4a.netlify.app/' }));
-
-// api/server.js
-const express = require('express');
-const { MongoClient } = require('mongodb');
-const app = express();
-const PORT = process.env.PORT || 3000;
 
 // --- 数据库配置 ---
 // 从环境变量中读取敏感信息，这是一个好习惯
