@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 // app.use(cors());
 
 // 如果你希望更安全，可以只允许你自己的 Netlify 域名：
-app.use(cors({ origin: 'https://comfy-valkyrie-40dc4a.netlify.app/' }));
+app.use(cors({ origin: 'https://comfy-valkyrie-40dc4a.netlify.app' }));
 
 // --- 数据库配置 ---
 // 从环境变量中读取敏感信息，这是一个好习惯
