@@ -139,7 +139,8 @@
     <h2 class = "page-title">对今天的饭菜打分！</h2>
     <p class = "description-text">
         From 1(disgusting!) to 5(fantastic!), you don't have to rate all dishes<br>
-        从1分（非常难吃！）到5分（很好吃！），不需要对每一道菜都打分
+        从1分（非常难吃！）到5分（很好吃！），不需要对每一道菜都打分<br>
+        图片仅供参考......All Images For Reference Only
     </p>
 
     <div class="gallery" id="gallery"></div>
@@ -155,50 +156,74 @@
         const images = [
             {
                 id: 'pic1',
-                src: 'images/pic34.png',
-                title: 'Pic 1',
-                desc1: 'Hayase Yuuka',
-                desc2: 'Exciting'
+                src: 'images/onePBRB.png',
+                title: '把子肉盖饭 \n Pork Belly Rice Bowl',
+                desc1: '一食堂 Cafeteria 1',
+                desc2: '692大卡；碳水化合物85.2g、蛋白质38.6g、脂肪18.3g',
+                desc3: '692 kcal; Carbohydrates 85.2g, Protein 38.6g, Fats 18.3g'
             },
 
             {
                 id: 'pic2',
-                src: 'images/pic35.png',
-                title: 'Pic 2',
-                desc1: 'Hayase Yuuka',
-                desc2: 'Shocked'
+                src: 'images/twoSSCSCR.png',
+                title: '四川炒鸡 + 手撕包菜 + 米饭 \n Sichuan-style Stir-fried Chicken + Shredded Cabbage + Rice',
+                desc1: '二食堂 Cafeteria 2',
+                desc2: '635大卡；碳水化合物78.5g、蛋白质35.2g、脂肪16.8g',
+                desc3: '635 kcal; Carbohydrates 35.2g, Protein 35.2g, Fats 16.8g'
             },
 
             {
                 id: 'pic3',
-                src: 'images/pic36.png',
-                title: 'Pic 3',
-                desc1: 'Hayase Yuuka',
-                desc2: 'Disappointed'
+                src: 'images/oneTCBR.png',
+                title: '番茄芝士肉酱饭 \n Tomato and Cheese Bolognese Rice',
+                desc1: '一食堂 Cafeteria 1',
+                desc2: '601大卡；碳水化合物76.3g、蛋白质36.1g、脂肪16.8g',
+                desc3: '601 kcal; Carbohydrates 76.3g, Protein 36.1g, Fats 16.8g'
             },
 
             {
                 id: 'pic4',
-                src: 'images/pic37.png',
-                title: 'Pic 4',
-                desc1: 'Hayase Yuuka',
-                desc2: 'Delighted'
+                src: 'images/twoBPOR.png',
+                title: '红烧肉盖饭 \n Braised Pork Over Rice',
+                desc1: '二食堂 Cafeteria 2',
+                desc2: '618大卡；碳水化合物82.4g、蛋白质32.5g、脂肪15.6g',
+                desc3: '618 kcal; Carbohydrates 82.4g, Protein 32.5g, Fats 15.6g'
             },
 
             {
                 id: 'pic5',
-                src: 'images/pic38.png',
-                title: 'Pic 5',
-                desc1: 'Hayase Yuuka',
-                desc2: 'Shy'
+                src: 'images/oneCBNS.png',
+                title: '清汤牛肉面 \n Clear Beef Noodle Soup',
+                desc1: '一食堂 Cafeteria 1',
+                desc2: '490大卡；碳水化合物 60.0g、蛋白质 35.8g、脂肪 10.0g',
+                desc3: '490 kcal; Carbohydrates 60.0g, Protein 35.8g, Fats 10.0g'
             },
 
             {
                 id: 'pic6',
-                src: 'images/pic39.png',
-                title: 'Pic 6',
-                desc1: 'Hayase Yuuka',
-                desc2: 'Confused'
+                src: 'images/twoSPPCRSMC.png',
+                title: '酸菜滑肉 + 米饭 + 香菇油菜 \n Sliced Pork with Pickled Cabbage + Rice + Shiitake Mushrooms and Cabbage',
+                desc1: '二食堂 Cafeteria 2',
+                desc2: '465大卡；碳水48.5g、蛋白质36.2g、脂肪10.7g',
+                desc3: '465 kcal; Carbohydrates 48.5g, Protein 36.2g, Fats 10.7g'
+            },
+
+            {
+                id: 'pic7',
+                src: 'images/oneGSGNPR.png',
+                title: '蒜蓉粉丝龙利鱼 + 米饭 \n Garlic-Sautéed Glass Noodles with Pangasius + Rice',
+                desc1: '一食堂 Cafeteria 1',
+                desc2: '517大卡；碳水65.2g、蛋白质28.9g、脂肪12.3g',
+                desc3: '517 kcal; Carbohydrates 65.2g, Protein 28.9g, Fats 12.3g'
+            },
+
+            {
+                id: 'pic8',
+                src: 'images/twoPCFRB.png',
+                title: '酸菜鱼盖饭 \n Pickled Cabbage and Fish Rice Bowl',
+                desc1: '二食堂 Cafeteria 2',
+                desc2: '525大卡；碳水68.5g、蛋白质30.2g、脂肪11.5g',
+                desc3: '525 kcal; Carbohydrates 68.5g, Protein 30.2g, Fats 11.5g'
             },
         ];
 
@@ -227,7 +252,7 @@
             imageEl.alt = img.title;
             card.appendChild(imageEl);
 
-            // 两行描述文字
+            // 三行描述文字
             if (img.desc1) {
                 const desc1El = document.createElement('p');
                 desc1El.className = 'img-desc';   // 使用一个 CSS 类方便统一样式
@@ -240,6 +265,13 @@
                 desc2El.className = 'img-desc';
                 desc2El.textContent = img.desc2;
                 card.appendChild(desc2El);
+            }
+
+            if (img.desc3) {
+                const desc3El = document.createElement('p');
+                desc3El.className = 'img-desc';
+                desc3El.textContent = img.desc3;
+                card.appendChild(desc3El);
             }
 
             // 评分按钮组
