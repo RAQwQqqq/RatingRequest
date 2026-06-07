@@ -44,6 +44,12 @@
             width: 280px;
             text-align: center;
         }
+        .card h3 {
+            white-space: pre-line;
+            margin-bottom: 10px;       /* 可以调整标题和图片之间的间距 */
+            line-height: 1.2;          /* 让多行标题行距舒适 */
+            text-align: center;        /* 居中显示（视你的设计） */
+        }
         .card img {
             width: 100%;
             height: 200px;
@@ -109,7 +115,7 @@
             font-size: 20px;
             font-weight: bold;
             cursor: pointer;
-            transition: background 0.2s;
+            transition: 0.2s;
             box-shadow: 0 2px 8px rgba(0,119,204,0.3);
         }
         .global-submit-btn:hover {
@@ -156,74 +162,82 @@
         const images = [
             {
                 id: 'pic1',
-                src: 'images/onePBRB.png',
-                title: '把子肉盖饭 \n Pork Belly Rice Bowl',
-                desc1: '一食堂 Cafeteria 1',
-                desc2: '692大卡；碳水化合物85.2g、蛋白质38.6g、脂肪18.3g',
-                desc3: '692 kcal; Carbohydrates 85.2g, Protein 38.6g, Fats 18.3g'
+                src: 'images/棒骨饭.png',
+                title: '卤肉棒骨饭 \n Braised Pork Ribs and Rice',
+                desc1: '一食堂，韩餐',
+                desc2: 'Cafeteria 1, Korean Food',
+                desc3: '694kcal；碳水 85.2g、蛋白质 41.5g、脂肪 18.3g',
+                desc4: '694 kcal; Carbohydrates 85.2g, Protein 41.5g, Fats 18.3g'
             },
 
             {
                 id: 'pic2',
-                src: 'images/twoSSCSCR.png',
-                title: '四川炒鸡 + 手撕包菜 + 米饭 \n Sichuan-style Stir-fried Chicken + Shredded Cabbage + Rice',
-                desc1: '二食堂 Cafeteria 2',
-                desc2: '635大卡；碳水化合物78.5g、蛋白质35.2g、脂肪16.8g',
-                desc3: '635 kcal; Carbohydrates 35.2g, Protein 35.2g, Fats 16.8g'
+                src: 'images/蒜泥白肉.png',
+                title: '蒜泥白肉+米饭+蒜蓉粉丝娃娃菜 \n Sliced Pork with Garlic Paste + Rice + Garlic Vermicelli with Baby Cabbage',
+                desc1: '二食堂，川味小炒',
+                desc2: 'Cafeteria 2, Sichuan-style Stir-fried Dishes',
+                desc3: '636kcal；碳水 78.5g、蛋白质 38.2g、脂肪 16.7g',
+                desc4: '636 kcal; Carbohydrates 78.5g, Protein 38.2g, Fats 16.7g'
             },
 
             {
                 id: 'pic3',
-                src: 'images/oneTCBR.png',
-                title: '番茄芝士肉酱饭 \n Tomato and Cheese Bolognese Rice',
-                desc1: '一食堂 Cafeteria 1',
-                desc2: '601大卡；碳水化合物76.3g、蛋白质36.1g、脂肪16.8g',
-                desc3: '601 kcal; Carbohydrates 76.3g, Protein 36.1g, Fats 16.8g'
+                src: 'images/土豆翅根锅仔.png',
+                title: '土豆翅根锅仔 \n Potato and Chicken Wing Hot Pot',
+                desc1: '一食堂，锅仔',
+                desc2: 'Cafeteria 1, Hot Pot',
+                desc3: '517kcal；碳水 70.2g、蛋白质 32.8g、脂肪 13.5g',
+                desc4: '517 kcal; Carbohydrates 70.2g, Protein 32.8g, Fats 13.5g'
             },
 
             {
                 id: 'pic4',
-                src: 'images/twoBPOR.png',
-                title: '红烧肉盖饭 \n Braised Pork Over Rice',
-                desc1: '二食堂 Cafeteria 2',
-                desc2: '618大卡；碳水化合物82.4g、蛋白质32.5g、脂肪15.6g',
-                desc3: '618 kcal; Carbohydrates 82.4g, Protein 32.5g, Fats 15.6g'
+                src: 'images/香菇卤肉饭.png',
+                title: '香菇卤肉盖饭 \n Braised Pork and Shiitake Mushroom Bowl',
+                desc1: '二食堂，盖饭',
+                desc2: 'Cafeteria 2, Rice Bowls',
+                desc3: '619kcal；碳水 82.1g、蛋白质 40.3g、脂肪 16.5g',
+                desc4: '619 kcal; Carbohydrates 82.1g, Protein 40.3g, Fats 16.5g'
             },
 
             {
                 id: 'pic5',
-                src: 'images/oneCBNS.png',
-                title: '清汤牛肉面 \n Clear Beef Noodle Soup',
-                desc1: '一食堂 Cafeteria 1',
-                desc2: '490大卡；碳水化合物 60.0g、蛋白质 35.8g、脂肪 10.0g',
-                desc3: '490 kcal; Carbohydrates 60.0g, Protein 35.8g, Fats 10.0g'
+                src: 'images/酸菜鱼片.png',
+                title: '蒜蓉油菜+ 酸菜鱼片+ 米饭+ 番茄蛋花汤 \n Garlic-Sautéed Chinese Cabbage + Pickled Cabbage and Fish Slices + Rice + Tomato and Egg Drop Soup',
+                desc1: '教职工窗口',
+                desc2: 'Faculty Station',
+                desc3: '550kcal；蛋白质 40g、碳水化合物 45g、脂肪 18g',
+                desc4: '550 kcal; Carbohydrates 45g, Protein 40g, Fats 18g'
             },
 
             {
                 id: 'pic6',
-                src: 'images/twoSPPCRSMC.png',
-                title: '酸菜滑肉 + 米饭 + 香菇油菜 \n Sliced Pork with Pickled Cabbage + Rice + Shiitake Mushrooms and Cabbage',
-                desc1: '二食堂 Cafeteria 2',
-                desc2: '465大卡；碳水48.5g、蛋白质36.2g、脂肪10.7g',
-                desc3: '465 kcal; Carbohydrates 48.5g, Protein 36.2g, Fats 10.7g'
+                src: 'images/西红柿鸡蛋面.png',
+                title: '番茄鸡蛋面 \n Tomato and Egg Noodle',
+                desc1: '一食堂，拉面',
+                desc2: 'Cafeteria 1, Ramen',
+                desc3: '507kcal；碳水 66.2g、蛋白质 28.5g、脂肪 11.5g',
+                desc4: '507 kcal; Carbohydrates 66.2g, Protein 28.5g, Fats 11.5g'
             },
 
             {
                 id: 'pic7',
-                src: 'images/oneGSGNPR.png',
-                title: '蒜蓉粉丝龙利鱼 + 米饭 \n Garlic-Sautéed Glass Noodles with Pangasius + Rice',
-                desc1: '一食堂 Cafeteria 1',
-                desc2: '517大卡；碳水65.2g、蛋白质28.9g、脂肪12.3g',
-                desc3: '517 kcal; Carbohydrates 65.2g, Protein 28.9g, Fats 12.3g'
+                src: 'images/娃娃菜玉米粒汆丸子.png',
+                title: '娃娃菜玉米粒汆丸子+素炒油菜+主食馒头+润肺雪梨汤 \n Baby Bok Choy and Corn Kernel Meatballs + Stir-Fried Chinese Cabbage + Steamed Buns + Moisturizing Snow Pear Soup',
+                desc1: '教职工窗口',
+                desc2: 'Faculty Station',
+                desc3: '520kcal；蛋白质25g、碳水60g、脂肪15g',
+                desc4: '520 kcal; Carbohydrates 60g, Protein 25g, Fats 15g'
             },
 
             {
                 id: 'pic8',
-                src: 'images/twoPCFRB.png',
-                title: '酸菜鱼盖饭 \n Pickled Cabbage and Fish Rice Bowl',
-                desc1: '二食堂 Cafeteria 2',
-                desc2: '525大卡；碳水68.5g、蛋白质30.2g、脂肪11.5g',
-                desc3: '525 kcal; Carbohydrates 68.5g, Protein 30.2g, Fats 11.5g'
+                src: 'images/白菜豆腐炖丸子锅仔.png',
+                title: '白菜豆腐炖丸子锅仔+米饭 \n Hot Pot with Meatballs, Cabbage, and Tofu + Rice',
+                desc1: '一食堂，锅仔',
+                desc2: 'Cafeteria 1, Hot Pot',
+                desc3: '总热量514kcal；碳水 68.3g、蛋白质 31.5g、脂肪 12.8g',
+                desc4: '514 kcal; Carbohydrates 68.3g, Protein 31.5g, Fats 12.8g'
             },
         ];
 
@@ -252,7 +266,7 @@
             imageEl.alt = img.title;
             card.appendChild(imageEl);
 
-            // 三行描述文字
+            // 四行描述文字
             if (img.desc1) {
                 const desc1El = document.createElement('p');
                 desc1El.className = 'img-desc';   // 使用一个 CSS 类方便统一样式
@@ -272,6 +286,13 @@
                 desc3El.className = 'img-desc';
                 desc3El.textContent = img.desc3;
                 card.appendChild(desc3El);
+            }
+
+            if (img.desc4) {
+                const desc4El = document.createElement('p');
+                desc4El.className = 'img-desc';
+                desc4El.textContent = img.desc4;
+                card.appendChild(desc4El);
             }
 
             // 评分按钮组
